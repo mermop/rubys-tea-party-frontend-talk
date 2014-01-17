@@ -20,6 +20,8 @@
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
       document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -154,14 +156,38 @@ p {
             <h3><a id="alert-link">☃ Don't click this ☃</a></h3>
             <script type="text/javascript">
             var alertLink = document.getElementById('alert-link');
-            alertLink.addEventListener('click', function(){alert('Trust you to listen...');}, false);
+            alertLink.addEventListener('click', function (event) {alert('Trust you to listen...');}, false);
             </script>
             <h3><pre><code data-trim>
 var alertLink = document.getElementById('alert-link');
-alertLink.addEventListener('click', function(){
+alertLink.addEventListener('click', function (event) {
   alert('Trust you to listen...');
 }, false);
             </code></pre></h3>
+          </section>
+          <section>
+            <h2>Alerts (with jQuery)</h2>
+            <h3><a id="jq-alert-link">☃ Don't click this ☃</a></h3>
+            <script type="text/javascript">
+            var alertLink = $('#jq-alert-link');
+            alertLink.on('click', function (event) {
+              $(this).hide();
+              alert('Trust you to listen...');
+            });
+            </script>
+            <h3><pre><code data-trim>
+            var alertLink = $('#jq-alert-link');
+            alertLink.on('click', function (event) {
+              $(this).hide();
+              alert('Trust you to listen...');
+            });
+            </code></pre></h3>
+          </section>
+          <section>
+            <h2>Other Ideas</h2>
+            <h3>Bootstrap has a whole bunch of javascript widgets to look at,
+            and their code is quite easy to read.</h3>
+            <h3><a href="http://getbootstrap.com">http://getbootstrap.com</a></h3>
           </section>
         </section>
 
@@ -183,7 +209,6 @@ alertLink.addEventListener('click', function(){
       </div>
 
     </div>
-
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.min.js"></script>
 
