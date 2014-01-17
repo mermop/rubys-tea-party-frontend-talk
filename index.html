@@ -113,7 +113,7 @@
 &lt;link rel="stylesheet" href="styles.css"&gt;
 ...
 &lt;p class="beautiful classy" id="example"&gt;
-  Hello world! 
+  Hello world!
 &lt;/p&gt;
             </code></pre></h3>
           </section>
@@ -150,7 +150,18 @@ p {
             <p>Manipulating CSS and HTML</p>
           </section>
           <section>
-            
+            <h2>Alerts</h2>
+            <h3><a id="alert-link">☃ Don't click this ☃</a></h3>
+            <script type="text/javascript">
+            var alertLink = document.getElementById('alert-link');
+            alertLink.addEventListener('click', function(){alert('Trust you to listen...');}, false);
+            </script>
+            <h3><pre><code data-trim>
+var alertLink = document.getElementById('alert-link');
+alertLink.addEventListener('click', function(){
+  alert('Trust you to listen...');
+}, false);
+            </code></pre></h3>
           </section>
         </section>
 
